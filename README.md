@@ -21,3 +21,20 @@ Additionally, the true fare of a trip can be ambiguous in the case that it is le
 * Type `read_month('data.csv','results.txt)`
 * Type `quit()` to exit python
 * Now open "results.txt" in your favorite text editor. It should give you info on each pass.
+
+Here is an example output (March 2023, Data obtained using a $2.00 pass)
+```
+Product Type             Min Cost  Max Cost  
+Stored Value             $171.20    $171.20    
+Monthly Pass ($2.00)     $82.00     $82.00     
+Monthly Pass ($2.25)     $90.00     $90.00     
+Monthly Pass ($2.50)     $98.00     $98.00     
+Monthly Pass ($2.75)     $106.00    $106.00    
+Monthly Pass ($3.00)     $114.00    $114.00    
+Monthly Pass ($3.25)     $122.00    $122.00    
+Monthly Pass ($3.50)     $130.00    $130.00    
+Monthly Pass ($3.75)     $138.00    $138.00    
+Monthly Pass ($4.00)     $146.00    $146.00    
+Monthly Pass ($4.25)     $154.00    $154.00    
+
+```
