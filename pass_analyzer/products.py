@@ -21,6 +21,8 @@ class MonthlyPass(Product):
             return 0
         else:
             return price
+    def __str__(self):
+        return f'Monthly Pass (${self.fare:.2f})'
     @classmethod
     def from_fare(cls,fare):
         return cls(fare*32,fare)
@@ -28,3 +30,5 @@ class MonthlyPass(Product):
 class StoredValue(Product):
     def __init__(self):
         self.cost = 0
+    def __str__(self):
+        return 'Stored Value'

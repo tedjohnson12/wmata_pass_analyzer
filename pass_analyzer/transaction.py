@@ -3,7 +3,28 @@ Transaction class
 """
 import datetime
 
-from products import Product, MonthlyPass, StoredValue
+from pass_analyzer.products import Product, MonthlyPass, StoredValue
+
+def get_true_fare(pass_used,operator,change):
+    if operator == 'Metrobus':
+        return 2.00,2.00
+    elif operator == 'Metrorail':
+        if change == 0.00:
+            if hasattr(pass_used,'fare'):
+                metrorail_min = 2.00
+                return metrorail_min, pass_used.fare
+            else:
+                return 0.00, 0.00
+        else:
+            if hasattr(pass_used,'fare'):
+                fare = pass_used.fare + change
+                return fare, fare
+            else:
+                return change, change
+    else:
+        return change, change
+
+
 
 class Transaction:
     """
@@ -30,6 +51,8 @@ class Transaction:
         self.remaining_rides = remaining_rides
         self.change = change
         self.balance = balance
+        self.true_fare = get_true_fare(self.product,self.operator,self.change)
+
     @classmethod
     def from_pandas_row(cls,row):
         time = row['Time']
@@ -57,7 +80,7 @@ class Transaction:
         k = 1
         if '(' in change_str:
             k = -1
-        change = k * float(change_str.split[1][:4])
+        change = k * float(change_str.split('$')[1][:4])
         balance = float(row['Balance'].replace('$',''))
 
         return cls(
@@ -71,3 +94,7 @@ class Transaction:
             change,
             balance
         )
+    def use_product(self,product:Product):
+        fmin,fmax = self.true_fare
+        op = self.operator
+        return product.use(fmin,op), product.use(fmax,op)
