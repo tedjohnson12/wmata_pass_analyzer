@@ -1,6 +1,8 @@
 # WMATA Pass Analyzer
 Upload your WMATA month data to see what monthly pass would have been the cheapest.
 
+(Not affiliated with WMATA, I just use their trains and busses)
+
 Warning: I wrote this for myself. I can in no way guarentee that it will produce accurate information in all cases. In the case that WMATA fares change, this program's output has no meaning.
 
 Additionally, the true fare of a trip can be ambiguous in the case that it is less than what is covered by your pass (e.g. you have the $2.50 pass and went on a trip that cost $0.00. It is impossible to know if the true fare was $2.00, $2.50, or somewhere in between). This is why the results file lists both minimum and maximum costs for each pass.
