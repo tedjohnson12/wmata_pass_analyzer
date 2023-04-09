@@ -20,7 +20,7 @@ Additionally, the true fare of a trip can be ambiguous in the case that it is le
 * In the terminal, navigate to your data file. Maybe that is `cd ~/Documents`
 * Type `python3`
 * Type `from pass_analyzer import read_month`
-* Type `read_month('data.csv','results.txt)`
+* Type `read_month('data.csv','results.txt')`
 * Type `quit()` to exit python
 * Now open "results.txt" in your favorite text editor. It should give you info on each pass.
 
