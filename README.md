@@ -1,5 +1,5 @@
 # WMATA Pass Analyzer
-Upload your WMATA month data to see what monthly pass would have been the cheapest.
+Download and read your WMATA month data to see what monthly pass would have been the cheapest.
 
 (Not affiliated with WMATA, I just use their trains and buses)
 
